@@ -1,0 +1,5 @@
+print ('DESAFIO 03')
+numero1= input ('Digite o primeiro número')
+numero2= input ('Digite o segundo número')
+soma = int(numero1) + int(numero2)
+print ('A soma é: ' + str(soma))
