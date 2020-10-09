@@ -6,8 +6,8 @@
 from zabbix_api import ZabbixAPI
 
 #conexão com servidor
-zapi = ZabbixAPI (server = "http://monitoramento.sessp.gov.br/zabbix")
-zapi.login ("svc-zabbix","ZB@#X2019$")
+zapi = ZabbixAPI (server = "http://***********/zabbix")
+zapi.login ("svc-zabbix","************")
 
 #script para gerar listagem de hosts cadastrados no zabbix
 
