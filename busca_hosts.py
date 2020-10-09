@@ -6,13 +6,13 @@
 from zabbix_api import ZabbixAPI
 import csv
 
-#zapi = ZabbixAPI(server="http://172.18.14.146/zabbix/")
+#zapi = ZabbixAPI(server="http://************/zabbix/")
 
 #zapi.login("apizabbix","123456
 
-zapi = ZabbixAPI(server="http://monitoramento.sessp.gov.br/zabbix/")
+zapi = ZabbixAPI(server="http://**************/zabbix/")
 
-zapi.login("svc-zabbix","ZB@#X2019$")
+zapi.login("svc-zabbix","***************")
 
 
 arquivo =csv.reader(open('/tmp/hosts.csv'), delimiter=';')
