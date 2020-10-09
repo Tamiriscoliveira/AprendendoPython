@@ -2,9 +2,9 @@
 #-*- coding: utf-8 -*-
 from zabbix_api import ZabbixAPI
 
-zapi = ZabbixAPI(server="http://monitoramento.sessp.gov.br/zabbix/")
+zapi = ZabbixAPI(server="http://*********************/zabbix/")
 
-zapi.login("svc-zabbix","ZB@#X2019$")
+zapi.login("svc-zabbix","***************")
 
 trigger =zapi.trigger.get({
      "output":[
