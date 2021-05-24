@@ -1,0 +1,50 @@
+O projeto é um trabalho de faculdade da disciplina de Visualização da Informação que consiste em apresentar uma implementação, em Python. Com o objetivo de 
+apresentar três gráficos usando um dataset usando as técnicas estudadas.
+
+1 - Importando as Bibliotecas utilizadas
+
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+import plotly as py
+import plotly.graph_objs as go
+
+2 - Importando Base de Dados
+#base de dados retirado do site: https://www.kaggle.com/alexisbcook/data-for-datavis?select=spotify.csv
+
+ranking_spotify = pd.read_csv('spotify.csv',header=0, index_col=0, parse_dates=True, squeeze=True)
+
+#Visualização do Dataset 
+ranking_spotify
+
+3 - Visualização dos 10 ultimos dados
+ranking_spotify.tail(10)
+
+4 - Ranking do Dia 31/12/2017
+
+# Foi extraido do Dataset o ranking das músicas mais tocadas do dia 31/12/2017
+
+musicas = ['Shape of You','Despacito','Something Just Like This','HUMBLE','Unforgettable']
+acessos = ['7073032' , '8203454' , '3514602' , '2787752' , '3792953']
+indice = np.arange(start=len(musicas),stop=0,step=-1)
+
+5 - Gerando gráfico de Barras
+plt.barh(indice,acessos,color='red')
+plt.yticks(indice, musicas)
+plt.ylabel('Músicas')
+plt.xlabel('Acessos')
+plt.title('Ranking do Spotify 31.dez.2017')
+plt.show()
+
+6 - Gerando gráfico de Setor
+labels = ['Shape of You','Despacito','Something Just Like This','HUMBLE','Unforgettable']
+acessos = ['7073032' , '8203454' , '3514602' , '2787752' , '3792953']
+colors = ['yellow', 'pink', 'green', 'red', 'blue']
+patches, texts, autotexts = plt.pie(acessos, colors=colors, autopct='%1.0f%%', startangle=90)
+plt.legend(patches, labels, loc="lower right")
+plt.axis('equal')
+plt.show()
+
+7 - Gerando Grafico de Series das musicas mais tocadas
+ranking_spotify.plot()
+plt.show()
